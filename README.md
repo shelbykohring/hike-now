@@ -13,3 +13,16 @@ SO THAT I can see the weather and hotels in that city
 * Travel Partner Google API
 
 <!-- Issues and Assignments -->
+
+<!-- Title and Description Ideas:
+
+Vacation Starts Here
+A simple vacation app to know where you're going and what to expect
+
+Vacation Spots
+Know where you're going, where you can stay, and the weather in one app
+
+Vacation Expectations
+See the weather. See the hotels. Know what to expect.
+
+ -->
