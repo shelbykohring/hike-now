@@ -1,5 +1,6 @@
 <!-- Project Title and Description -->
-## Project Title
+## Vacation Expectations
+See the weather. See the hotels. Know what to expect.
 
 <!-- User Story -->
 ## User Story
@@ -24,5 +25,9 @@ Know where you're going, where you can stay, and the weather in one app
 
 Vacation Expectations
 See the weather. See the hotels. Know what to expect.
+
+The Vacationer App
+Beyond a destination.
+
 
  -->
