@@ -1,0 +1,23 @@
+:root {
+    --first-color: #000000;
+    --second-color: #fff098;
+    --third-color: #bdc1c5;
+    --fourth-color: #ecf0f5;
+    --fifth-color: #444749;
+}
+
+body {
+    margin: 0;
+}
+
+.hero-section {
+  background: url("/assets/images/group-project-1-hero.jpg")
+    50% no-repeat;
+  background-size: cover;
+  height: 50vh;
+  text-align: left;
+}
+
+.hero-text {
+    display: -ms-flexbox;
+}
