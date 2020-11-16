@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 
-img {
-    height: 500px;
+h2 {
+    font-size: 1rem;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
@@ -16,6 +15,64 @@ body {
     justify-content: center;
     perspective: 1200px;
 }
+
+/* landing page */
+.heading {
+    font-size: 12vh;
+}
+input {
+    font-size: 2rem;
+    padding-left: 20px;
+    margin: 5rem;
+    height: 3.2rem;
+    width: 25rem;
+    border-style: none;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(
+        to right,
+        rgba(38, 170, 115, 0.836),
+        rgba(27, 7, 212, 0.75)
+    );
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+}
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+::placeholder {
+    color: white;
+}
+input:focus {
+    outline: none;
+}
+.button2:focus {
+    outline: none;
+}
+.button2 {
+    height: 3.2rem;
+    width: 7rem;
+    margin: 2rem;
+    border-style: none;
+    border-radius: 50px;
+    color: black;
+    font-size: 2rem;
+    transition: color 0.4s;
+    transition: 0.1s;
+}
+button {
+    background: none;
+}
+.button2:hover {
+    color: blue;
+}
+.button2:active {
+    transform: translateY(4px);
+}
+
+/* card page */
 .container {
     width: 50%;
     height: 50%;
@@ -24,7 +81,7 @@ body {
     align-items: center;
 }
 .title {
-    color: black;
+    color: rgb(255, 255, 255);
     transition: 0.4s;
 }
 .title:hover {
@@ -39,31 +96,48 @@ body {
     border-radius: 30px;
     padding: 0rem 5rem;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+    background-color: rgba(128, 177, 241, 0.822);
 }
 
-.newzealand {
+.map-div {
     min-height: 35vh;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.75s ease-out;
 }
-.newzealand img{
-    width: 20rem;
+.map-div img{
+    max-width: 450px;
+    height: auto;
+    max-height: 300px;
     z-index: 2;
     transition: all 0.75s ease-out;
 }
-.circle {
-    width: 20rem;
-    height: 20rem;
-    background: linear-gradient(
-        to right,
-        rgba(226, 55, 155, 0.836),
-        rgba(27, 7, 212, 0.75)
-    );
+
+.back-button:focus {
+    outline: none;
+}
+.back-button {
     position: absolute;
-    border-radius: 50%;
-    z-index: 1;
+    top: 20px;
+    left: 20px;
+    height: 3.2rem;
+    width: 7rem;
+    margin: 2rem;
+    border-style: none;
+    border-radius: 50px;
+    color: black;
+    font-size: 1.5rem;
+    transition: color 0.4s;
+    transition: 0.1s;
+    background: none;
+}
+.back-button:hover {
+    color: blue;
+}
+.back-button:active {
+    transform: translateY(4px);
 }
 
 .info h1 {
@@ -72,12 +146,18 @@ body {
 }
 .info h3 {
     font-size: 1.3rem;
-    padding: 2rem 0rem;
     color: #585858;
     font-weight: lighter;
     transition: all 0.75s ease-out;
 }
-.list {
+
+.weather {
+    background-color: rgba(235, 117, 38, 0.822);
+    padding: 1.5rem;
+    transition: all 0.75s ease-out;
+    border-radius: 30px;
+} 
+/* .list {
     display: flex;
     justify-content: space-between;
     transition: all 0.75s ease-out;
@@ -90,10 +170,11 @@ body {
     border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
-    color: #585858;
+    color: white;
     transition: 0.4s;
-}
-button:hover {
+    background-color: rgba(248, 162, 1, 0.973);
+} */
+.more-info button:hover {
     background-color: #3a72da;
 }
 .more-info {
@@ -113,4 +194,7 @@ button:hover {
 }
 .more-info button:hover {
     background-color: #3a72da;
+}
+.description {
+
 }
