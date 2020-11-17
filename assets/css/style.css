@@ -18,6 +18,8 @@ body {
   text-align: left;
 }
 
-.hero-text {
-    display: -ms-flexbox;
-}
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
