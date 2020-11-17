@@ -1,17 +1,17 @@
-$(".button2").click(function() {
+$(".state-select").select(function() {
     $(".container").show();
-    $(".back-button").show();
+    // $(".back-button").show();
 });
 $(".button2").click(function() {
     $(".card2").hide();
 });
-$(".back-button").click(function() {
-    $(".card2").show();
-    $(".back-button").hide();
-});
-$(".back-button").click(function() {
-    $(".container").hide();
-});
+// $(".back-button").click(function() {
+//     $(".card2").show();
+//     $(".back-button").hide();
+// });
+// $(".back-button").click(function() {
+//     $(".container").hide();
+// });
 
 //Movement animation piece
 const card = document.querySelector('.card');

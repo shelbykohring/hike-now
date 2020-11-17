@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat";
 }
@@ -37,4 +43,163 @@ body {
 
 .text-shadow-none {
   text-shadow: none;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+::placeholder {
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+
+.button2:focus {
+  outline: none;
+}
+.button2 {
+  height: 3.2rem;
+  width: 7rem;
+  margin: 2rem;
+  border-style: none;
+  border-radius: 50px;
+  color: black;
+  font-size: 2rem;
+  transition: color 0.4s;
+  transition: 0.1s;
+}
+button {
+  background: none;
+}
+.button2:hover {
+  color: blue;
+}
+.button2:active {
+  transform: translateY(4px);
+}
+
+/* card page */
+.container {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+.title:hover {
+  color: rgb(61, 129, 65);
+  cursor: default;
+}
+.card {
+  transform-style: preserve-3d;
+  margin: 5rem 0rem;
+  min-height: 80vh;
+  width: 35rem;
+  border-radius: 30px;
+  padding: 0rem 5rem;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+  background-color: rgba(128, 177, 241, 0.822);
+}
+
+.map-div {
+  min-height: 35vh;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.75s ease-out;
+}
+.map-div img{
+  max-width: 450px;
+  height: auto;
+  max-height: 300px;
+  z-index: 2;
+  transition: all 0.75s ease-out;
+}
+
+.back-button:focus {
+  outline: none;
+}
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 3.2rem;
+  width: 7rem;
+  margin: 2rem;
+  border-style: none;
+  border-radius: 50px;
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.4s;
+  transition: 0.1s;
+  background: none;
+}
+.back-button:hover {
+  color: blue;
+}
+.back-button:active {
+  transform: translateY(4px);
+}
+
+.info h1 {
+  font-size: 3rem;
+  transition: all 0.75s ease-out;
+}
+.info h3 {
+  font-size: 1.3rem;
+  color: #585858;
+  font-weight: lighter;
+  transition: all 0.75s ease-out;
+}
+
+.weather {
+  background-color: rgba(235, 117, 38, 0.822);
+  padding: 1.5rem;
+  transition: all 0.75s ease-out;
+  border-radius: 30px;
+} 
+/* .list {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.75s ease-out;
+}
+.list button {
+  padding: 0.5rem 1.5rem;
+  background: none;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.4s;
+  background-color: rgba(248, 162, 1, 0.973);
+} */
+.more-info button:hover {
+  background-color: #3a72da;
+}
+.more-info {
+  margin: 5rem 0rem;
+  transition: all 0.75s ease-out;
+}
+.more-info button {
+  width: 100%;
+  padding: 1rem 0rem;
+  background: rgb(61, 185, 169);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bolder;
+  transition: 0.4s;
+}
+.more-info button:hover {
+  background-color: #3a72da;
 }
