@@ -2,33 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Travel Today</title>
+    <title>Hike Now</title>
   </head>
   <body>
     <header class="hero-section">
-      <div class="hero-text">
-        <div class="header">
-          <h1>Hike Now</h1>
-        </div>
-        <div class="subtitle">
-          <h6>See the weather. View the trails. Hike today.</h6>
-        </div>
-        <div>
-          <form>
-            <div class="row">
-              <div class="twelve columns">
-                <label for="exampleStateInput"
-                  >Where are you hiking today?</label
-                >
+      <div class="hero-img">
+        <div class="hero-text">
+          <div class="flex header">
+            <h1 class="text-shadow-md ml-12 mt-12 text-orange-200 font-bold text-4xl md:text-6xl leading-tight">
+              <i class="fas fa-hiking"></i>
+              HIKE NOW
+            </h1>
+          </div>
+          <div class="flex subtitle">
+            <h6 class="text-shadow ml-12 mb-4 pl-4 text-white text-xs md:text-xl">
+              See the trails. Get the weather. Hike now.
+            </h6>
+          </div>
+          <div class="flex">
+            <form class="ml-12">
+              <label class="text-shadow text-white pl-4 pr-4" for="exampleStateInput"
+                >Where are you hiking today?</label
+              >
+              <div class="pl-4">
                 <select
+                  class="rounded-md p-1 outline-none mt-2"
                   type="text"
-                  name="state-input"
-                  id="state-input"
-                  placeholder="Choose your state:"
+                  name="state-select"
+                  id="state-select"
                 >
-                  <option value="Choose">Choose Your State</option>
+                  <option value="Choose">Choose a state:</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -82,8 +96,8 @@
                   <option value="WY">Wyoming</option>
                 </select>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </header>
