@@ -1,0 +1,15 @@
+{
+  "name": "group-project",
+  "version": "1.0.0",
+  "description": "<!-- Issues and Assignments -->",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o assets/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^1.9.6"
+  }
+}
