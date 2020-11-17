@@ -1,33 +1,18 @@
 <!-- Project Title and Description -->
-## Vacation Expectations
-See the weather. See the hotels. Know what to expect.
+## Hike Now
+See the trails. Get the weather. Hike Now!
 
 <!-- User Story -->
 ## User Story
-AS A vacationer
-I WANT to enter where I am going
-SO THAT I can see the weather and hotels in that city
+AS A hiker
+I WANT to select a state to hike in
+SO THAT I can view potential trails and the weather to expect
 
 <!-- Identified APIs -->
 ## Identified APIs
 * Open Weather Map
-* Travel Partner Google API
+* Hiking Project
 
-<!-- Issues and Assignments -->
+<!-- Acceptance Criteria
 
-<!-- Title and Description Ideas:
-
-Vacation Starts Here
-A simple vacation app to know where you're going and what to expect
-
-Vacation Spots
-Know where you're going, where you can stay, and the weather in one app
-
-Vacation Expectations
-See the weather. See the hotels. Know what to expect.
-
-The Vacationer App
-Beyond a destination.
-
-
- -->
+-->
