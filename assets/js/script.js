@@ -1,3 +1,4 @@
+// Search button click handling
 $(".button2").click(function() {
     $(".container").show();
     $(".back-button").show();
@@ -56,7 +57,9 @@ var currentTime = (moment().format('MM/DD/YYYY'));
 var apiKey = "78abac7397dbff0934df4ef82fc5fd58";
 var query = document.getElementById("search-term");
 var maps = document.getElementById("map");
+console.log(currentTime);
 
+// Maps object
 var images = {
     Alabama: "./assets/images/alabama.png",
     Alaska: "./assets/images/alaska.png",
@@ -110,11 +113,11 @@ var images = {
     Wyoming: "./assets/images/wyoming.png"
 };
 
-console.log(currentTime);
-
-$("#search-term").keypress(function(e){
-    if(e.which == 13) {
-        $("#button2").click();
+// Search on enter keyup
+query.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("searchbtn").click();
     }
 });
 
@@ -128,14 +131,10 @@ function uvIndex(lng, lat) {
 
             $(".uvIndex").html("UV Index: " + `<span class=" badge badge-danger">${(response1.value)}</span>`);
         });
-}
-
-let geocoder;
-
+};
 function successFunction(position) {
     let lat = position.coords.latitude;
     let lng = position.coords.longitude;
-    console.log(lat, lng)
 
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&appid=${apiKey}`,
@@ -146,19 +145,18 @@ function successFunction(position) {
         });
     uvIndex(lng, lat);
 };
+
+// Update location
 function updateLocation(response) {
     $(".city").html(`<h2>${response.name} (${currentTime}) <img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`);
     $(".humidity").text("Humidity: " + Math.round(response.main.humidity) + "%");
     $(".temperature").text("Temperature: " + Math.round(response.main.temp) + "°F");
     $(".title").html(response.name);
-    console.log(response.name);
     maps.src = images[response.name];
-}
-function errorFunction() {
-    alert("Geocoder failed");
-}
+};
 
-function citySearch() {
+// State search function
+function stateSearch() {
     $(".button2").click(function (event) {
         //this event prevents default refreshing of the page upon button click
         event.preventDefault("click")
@@ -174,19 +172,16 @@ function citySearch() {
         }
     })
 };
-citySearch();
+stateSearch();
 
 const cityInfo = async (city) => {
-
     const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
     const response = await fetch(queryURL);
     const result = await response.json();
     return result;
-
 };
 
 const buttonClick = (city) => {
-
     cityInfo(city).then(response => {
         updateLocation(response);
         uvIndex(response.coord.lon, response.coord.lat);
