@@ -570,7 +570,7 @@ iframe,
 embed,
 object {
   display: block;
-  vertical-align: middle;
+  @apply align-middle;
 }
 
 /**
