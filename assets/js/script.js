@@ -1,17 +1,6 @@
-// Search button click handling
-$(".button2").click(function() {
+// Select click handling
+$(".state-select").select(function() {
     $(".container").show();
-    $(".back-button").show();
-});
-$(".button2").click(function() {
-    $(".card2").hide();
-});
-$(".back-button").click(function() {
-    $(".card2").show();
-    $(".back-button").hide();
-});
-$(".back-button").click(function() {
-    $(".container").hide();
 });
 
 //Movement animation piece
@@ -55,7 +44,7 @@ container.addEventListener("mouseleave", (e) => {
 // -----------------------------------------------------------------------------------------
 var currentTime = (moment().format('MM/DD/YYYY'));
 var apiKey = "78abac7397dbff0934df4ef82fc5fd58";
-var query = document.getElementById("search-term");
+var query = document.getElementById("state-select");
 var maps = document.getElementById("map");
 console.log(currentTime);
 
@@ -117,7 +106,7 @@ var images = {
 query.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("searchbtn").click();
+        document.getElementById("state-select").select();
     }
 });
 
@@ -161,7 +150,7 @@ function stateSearch() {
     $(".button2").click(function (event) {
         //this event prevents default refreshing of the page upon button click
         event.preventDefault("click")
-        let city = $("#search-term").val().trim();
+        let city = $("#state-select").val().trim();
         if (city != '') {
             $.ajax({
                 url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`,
