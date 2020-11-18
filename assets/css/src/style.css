@@ -221,3 +221,14 @@ button {
 .more-info button:hover {
   background-color: #3a72da;
 }
+
+footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: rgb(120, 122, 122);
+	color: whitesmoke;
+    text-align: center;
+    font-family: "Montserrat";
+}
