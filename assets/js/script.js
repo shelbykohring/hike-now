@@ -2,9 +2,9 @@ $(".state-select").change(function() {
     $(".container").show();
     // $(".back-button").show();
 });
-$(".state-select").change(function() {
-    $(".card2").hide();
-});
+// $(".state-select").change(function() {
+//     $(".card2").hide();
+// });
 // $(".back-button").click(function() {
 //     $(".card2").show();
 //     $(".back-button").hide();
