@@ -1,8 +1,8 @@
-$(".state-select").select(function() {
+$(".state-select").change(function() {
     $(".container").show();
     // $(".back-button").show();
 });
-$(".button2").click(function() {
+$(".state-select").change(function() {
     $(".card2").hide();
 });
 // $(".back-button").click(function() {
@@ -112,9 +112,9 @@ var images = {
 
 console.log(currentTime);
 
-$("#search-term").keypress(function(e){
+$("#state-select").change(function(e){
     if(e.which == 13) {
-        $("#button2").click();
+        $("#state-select").change();
     }
 });
 
@@ -159,10 +159,10 @@ function errorFunction() {
 }
 
 function citySearch() {
-    $(".button2").click(function (event) {
+    $(".state-select").change(function (event) {
         //this event prevents default refreshing of the page upon button click
-        event.preventDefault("click")
-        let city = $("#search-term").val().trim();
+        event.preventDefault("change")
+        let city = $("#state-select").val().trim();
         if (city != '') {
             $.ajax({
                 url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`,
