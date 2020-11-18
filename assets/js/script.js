@@ -79,7 +79,7 @@ var images = {
     Kansas: "./assets/images/kansas.png",
     Kentucky: "./assets/images/kentucky.png",
     Louisiana: "./assets/images/louisiana.png",
-    Maine: "./assets/images/maine.png",
+    "State of Maine": "./assets/images/maine.png",
     Maryland: "./assets/images/maryland.png",
     Massachusetts: "./assets/images/massachusetts.png",
     Michigan: "./assets/images/michigan.png",
@@ -110,7 +110,7 @@ var images = {
     Washington: "./assets/images/washington.png",
     "West Virginia": "./assets/images/westvirginia.png",
     Wisconsin: "./assets/images/wisconsin.png",
-    Wyoming: "./assets/images/wyoming.png"
+    "State of Wyoming": "./assets/images/wyoming.png"
 };
 
 // Search on enter keyup
@@ -153,6 +153,7 @@ function updateLocation(response) {
     $(".temperature").text("Temperature: " + Math.round(response.main.temp) + "°F");
     $(".title").html(response.name);
     maps.src = images[response.name];
+    console.log(response.name);
 };
 
 // State search function
