@@ -21651,6 +21651,13 @@ body {
   background-size: cover;
 }
 
+.body-img {
+  background-image: url("/assets/images/landing-page-main.jpg");
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
