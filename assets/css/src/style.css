@@ -18,6 +18,8 @@ body {
 .body-img {
   background-image: url("/assets/images/landing-page-main.jpg");
   background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
   margin-top: 20px;
   margin-bottom: 20px;
 }
