@@ -49,9 +49,10 @@ h2 {
   font-size: 1rem;
 }
 
-::placeholder {
+/* ::placeholder {
   color: white;
 }
+
 input:focus {
   outline: none;
 }
@@ -59,6 +60,7 @@ input:focus {
 .button2:focus {
   outline: none;
 }
+
 .button2 {
   height: 3.2rem;
   width: 7rem;
@@ -69,13 +71,16 @@ input:focus {
   font-size: 2rem;
   transition: color 0.4s;
   transition: 0.1s;
-}
+} */
+
 button {
   background: none;
 }
+
 .button2:hover {
   color: blue;
 }
+
 .button2:active {
   transform: translateY(4px);
 }
@@ -88,14 +93,17 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 .title {
   color: rgb(255, 255, 255);
   transition: 0.4s;
 }
+
 .title:hover {
   color: rgb(61, 129, 65);
   cursor: default;
 }
+
 .card {
   transform-style: preserve-3d;
   margin: 5rem 0rem;
@@ -103,7 +111,7 @@ button {
   width: 35rem;
   border-radius: 30px;
   padding: 0rem 5rem;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
   background-color: rgba(128, 177, 241, 0.822);
 }
 
@@ -115,7 +123,8 @@ button {
   justify-content: center;
   transition: all 0.75s ease-out;
 }
-.map-div img{
+
+.map-div img {
   max-width: 450px;
   height: auto;
   max-height: 300px;
@@ -126,6 +135,7 @@ button {
 .back-button:focus {
   outline: none;
 }
+
 .back-button {
   position: absolute;
   top: 20px;
@@ -141,9 +151,11 @@ button {
   transition: 0.1s;
   background: none;
 }
+
 .back-button:hover {
   color: blue;
 }
+
 .back-button:active {
   transform: translateY(4px);
 }
@@ -152,6 +164,7 @@ button {
   font-size: 3rem;
   transition: all 0.75s ease-out;
 }
+
 .info h3 {
   font-size: 1.3rem;
   color: #585858;
@@ -164,7 +177,8 @@ button {
   padding: 1.5rem;
   transition: all 0.75s ease-out;
   border-radius: 30px;
-} 
+}
+
 /* .list {
   display: flex;
   justify-content: space-between;
@@ -182,13 +196,16 @@ button {
   transition: 0.4s;
   background-color: rgba(248, 162, 1, 0.973);
 } */
+
 .more-info button:hover {
   background-color: #3a72da;
 }
+
 .more-info {
   margin: 5rem 0rem;
   transition: all 0.75s ease-out;
 }
+
 .more-info button {
   width: 100%;
   padding: 1rem 0rem;
@@ -200,6 +217,7 @@ button {
   font-weight: bolder;
   transition: 0.4s;
 }
+
 .more-info button:hover {
   background-color: #3a72da;
 }

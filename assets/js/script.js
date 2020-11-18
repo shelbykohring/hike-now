@@ -2,9 +2,9 @@ $(".state-select").change(function() {
     $(".container").show();
     // $(".back-button").show();
 });
-$(".state-select").change(function() {
-    $(".card2").hide();
-});
+// $(".state-select").change(function() {
+//     $(".card2").hide();
+// });
 // $(".back-button").click(function() {
 //     $(".card2").show();
 //     $(".back-button").hide();
@@ -54,7 +54,7 @@ container.addEventListener("mouseleave", (e) => {
 // -----------------------------------------------------------------------------------------
 var currentTime = (moment().format('MM/DD/YYYY'));
 var apiKey = "78abac7397dbff0934df4ef82fc5fd58";
-var query = document.getElementById("search-term");
+var query = document.getElementById("state-select");
 var maps = document.getElementById("map");
 
 var images = {
@@ -112,11 +112,11 @@ var images = {
 
 console.log(currentTime);
 
-$("#state-select").change(function(e){
-    if(e.which == 13) {
-        $("#state-select").change();
-    }
-});
+// $("#state-select").change(function(e){
+//     if(e.which == 13) {
+//         $("#state-select").change();
+//     }
+// });
 
 // UV index
 function uvIndex(lng, lat) {
