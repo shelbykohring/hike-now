@@ -570,7 +570,7 @@ iframe,
 embed,
 object {
   display: block;
-  @apply align-middle;
+  vertical-align: middle;
 }
 
 /**
@@ -21685,15 +21685,7 @@ h2 {
   font-size: 1rem;
 }
 
-::-moz-placeholder {
-  color: white;
-}
-
-:-ms-input-placeholder {
-  color: white;
-}
-
-::placeholder {
+/* ::placeholder {
   color: white;
 }
 
@@ -21715,7 +21707,7 @@ input:focus {
   font-size: 2rem;
   transition: color 0.4s;
   transition: 0.1s;
-}
+} */
 
 button {
   background: none;
@@ -21756,7 +21748,7 @@ button {
   width: 35rem;
   border-radius: 30px;
   padding: 0rem 5rem;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
   background-color: rgba(128, 177, 241, 0.822);
 }
 
@@ -21769,7 +21761,7 @@ button {
   transition: all 0.75s ease-out;
 }
 
-.map-div img{
+.map-div img {
   max-width: 450px;
   height: auto;
   max-height: 300px;
@@ -105818,3 +105810,5 @@ button {
             animation: bounce 1s infinite;
   }
 }
+
+
