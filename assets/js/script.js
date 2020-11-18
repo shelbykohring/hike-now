@@ -1,5 +1,5 @@
 // Select click handling
-$(".state-select").select(function() {
+$(".state-select").change(function() {
     $(".container").show();
 });
 
