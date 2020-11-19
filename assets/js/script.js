@@ -1,5 +1,8 @@
 $(".state-select").change(function () {
   $(".container").show();
+  var query = document.getElementById("search-term").value;
+  maps.src = images[query];
+  console.log(query);
 });
 
 //Movement animation piece
@@ -135,18 +138,24 @@ function successFunction(position) {
   });
   uvIndex(lng, lat);
 }
+
 function updateLocation(response) {
-  $(".city").html(
-    `<h2>${response.name} (${currentTime}) <img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`
-  );
-  $(".humidity").text("Humidity: " + Math.round(response.main.humidity) + "%");
-  $(".temperature").text(
-    "Temperature: " + Math.round(response.main.temp) + "°F"
-  );
-  $(".title").html(response.name);
-  console.log(response.name);
-  maps.src = images[response.name];
-}
+    $(".city").html(`<h2>${response.name} (${currentTime}) <img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`);
+    $(".humidity").text("Humidity: " + Math.round(response.main.humidity) + "%");
+    $(".temperature").text("Temperature: " + Math.round(response.main.temp) + "°F");
+    $(".title").html(response.name);
+    // maps.src = images[response.name];
+    if (response.name === "State of Maine") {
+        $(".title").text("Maine");
+        // $(".trail-desc").text("BEST TRAILS IN MAINE")
+    } else if (response.name === "State of Wyoming") {
+        $(".title").text("Wyoming");
+        // $(".trail-desc").text("BEST TRAILS IN WYOMING") ;
+    } else {
+        // $(".trail-desc").text("BEST TRAILS IN " + response.name);
+    };
+};
+
 function errorFunction() {
   alert("Geocoder failed");
 }
