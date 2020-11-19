@@ -49,29 +49,7 @@ h2 {
   font-size: 1rem;
 }
 
-/* ::placeholder {
-  color: white;
-}
 
-input:focus {
-  outline: none;
-}
-
-.button2:focus {
-  outline: none;
-}
-
-.button2 {
-  height: 3.2rem;
-  width: 7rem;
-  margin: 2rem;
-  border-style: none;
-  border-radius: 50px;
-  color: black;
-  font-size: 2rem;
-  transition: color 0.4s;
-  transition: 0.1s;
-} */
 
 button {
   background: none;
@@ -130,34 +108,6 @@ button {
   max-height: 300px;
   z-index: 2;
   transition: all 0.75s ease-out;
-}
-
-.back-button:focus {
-  outline: none;
-}
-
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 3.2rem;
-  width: 7rem;
-  margin: 2rem;
-  border-style: none;
-  border-radius: 50px;
-  color: black;
-  font-size: 1.5rem;
-  transition: color 0.4s;
-  transition: 0.1s;
-  background: none;
-}
-
-.back-button:hover {
-  color: blue;
-}
-
-.back-button:active {
-  transform: translateY(4px);
 }
 
 .info h1 {
