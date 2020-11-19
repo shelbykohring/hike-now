@@ -17,7 +17,7 @@
     <title>Hike Now</title>
   </head>
   <body>
-    <header class="hero-section">
+    <header class="hero-section border-white border-b-8">
       <div class="hero-img">
         <div class="hero-text">
           <div class="flex header">
@@ -112,37 +112,42 @@
 
   
     <!-- State Display Card -->
-    <div id="container" class="container" style="display: none">
-      <div class="card">
-        <div class="map-div">
-          <img
-            class="map"
-            id="map"
-            src="./assets/images/tennessee.png"
-            alt="physical map"
-          />
-        </div>
-        <div class="info">
-          <h1 class="title"></h1>
-
-          <div class="weather">
-            <h3 class="description">CURRENT CONDITIONS</h3>
-            <div class="list">
-              <div class="city" id="currentDay"></div>
-              <div class="temperature"></div>
-              <div class="humidity"></div>
-              <div class="uvIndex"></div>
-            </div>
+  <div class="w-screen h-screen">
+    <div class="main-page w-full h-full">
+      <div id="container" class="container" style="display: none">
+        <div class="card">
+          <div class="map-div">
+            <img
+              class="map"
+              id="map"
+              src="./assets/images/tennessee.png"
+              alt="physical map"
+            />
           </div>
-          <div class="more-info">
-            <button>More Information</button>
+          <div class="info">
+            <h1 class="title"></h1>
+  
+            <div class="weather">
+              <h3 class="description">CURRENT CONDITIONS</h3>
+              <div class="list">
+                <div class="city" id="currentDay"></div>
+                <div class="temperature"></div>
+                <div class="humidity"></div>
+                <div class="uvIndex"></div>
+              </div>
+            </div>
+            <div class="more-info">
+              <button>More Information</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+    
 
-    <footer class="flex bg-bottom bg-auto bg-gray-900 bg-opacity-75 border-white border-t-8 text-center">
-      <div class="text-white text-shadow-md pt-3 pb-4 w-full">
+    <footer class="flex bg-bottom bg-auto bg-gray-900 bg-opacity-75 text-center border-white border-t-8">
+      <div class="text-white text-shadow-md pt-4 pb-4 w-full">
         <div>
           <h2 class="font-bold text-orange-200 text-shadow text-3xl">
             <i class="fas fa-hiking"></i>

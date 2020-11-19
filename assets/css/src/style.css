@@ -45,22 +45,9 @@ body {
   text-shadow: none;
 }
 
-h2 {
-  font-size: 1rem;
-}
-
-
-
-button {
-  background: none;
-}
-
-.button2:hover {
-  color: blue;
-}
-
-.button2:active {
-  transform: translateY(4px);
+.main-page {
+  background-image: url(/assets/images/landing-page-main\ copy.jpg);
+  background-size: 100% 100%;
 }
 
 /* card page */
@@ -171,5 +158,3 @@ button {
 .more-info button:hover {
   background-color: #3a72da;
 }
-
-
