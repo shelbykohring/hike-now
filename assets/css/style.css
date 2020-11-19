@@ -21682,7 +21682,7 @@ body {
 }
 
 .main-page {
-  background-image: url(/assets/images/landing-page-main\ copy.jpg);
+  background-image: url(/assets/images/landing-page-main.jpg);
   background-size: 100% 100%;
 }
 
@@ -21715,6 +21715,8 @@ body {
   padding: 0rem 5rem;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
   background-color: rgba(128, 177, 241, 0.822);
+  position: absolute;
+  top: 300px;
 }
 
 .map-div {
