@@ -1,7 +1,18 @@
-// Select click handling
+// Search button click handling
 $(".state-select").change(function() {
     $(".container").show();
+    $(".back-button").show();
 });
+$(".button2").click(function() {
+    $(".card2").hide();
+});
+$(".back-button").click(function() {
+    $(".card2").show();
+    $(".back-button").hide();
+});
+$(".back-button").click(function() {
+    $(".container").hide();
+}); 
 
 //Movement animation piece
 const card = document.querySelector('.card');
@@ -106,9 +117,9 @@ var images = {
 query.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("state-select").select();
+        document.getElementById("state-select").change();
     }
-});
+}); 
 
 // UV index
 function uvIndex(lng, lat) {
@@ -147,9 +158,9 @@ function updateLocation(response) {
 
 // State search function
 function stateSearch() {
-    $(".button2").click(function (event) {
+    $("state-select").change(function (event) {
         //this event prevents default refreshing of the page upon button click
-        event.preventDefault("click")
+        event.preventDefault("change")
         let city = $("#state-select").val().trim();
         if (city != '') {
             $.ajax({
