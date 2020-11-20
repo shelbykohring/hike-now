@@ -1,0 +1,23 @@
+{
+  "name": "group-project-1",
+  "version": "1.0.0",
+  "description": "<!-- Project Title and Description --> ## Project Title",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build assets/css/src/style.css -o assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohringsw/group-project-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kohringsw/group-project-1/issues"
+  },
+  "homepage": "https://github.com/kohringsw/group-project-1#readme",
+  "dependencies": {
+    "tailwindcss": "^1.9.6"
+  }
+}

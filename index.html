@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Hike Now</title>
+  </head>
+  <body>
+    <header class="hero-section border-white border-b-8">
+      <div class="hero-img">
+        <div class="hero-text">
+          <div class="flex header">
+            <h1
+              class="text-shadow-md ml-12 mt-12 text-orange-200 font-bold text-4xl md:text-6xl leading-tight"
+            >
+              <i class="fas fa-hiking"></i>
+              HIKE NOW
+            </h1>
+          </div>
+          <div class="flex subtitle">
+            <h6
+              class="text-shadow ml-12 mb-4 pl-4 text-white text-xs md:text-xl"
+            >
+              See the trails. Get the weather. Hike now.
+            </h6>
+          </div>
+          <div class="flex form">
+            <form class="ml-12">
+              <label
+                class="text-shadow text-white pl-4 pr-4"
+                for="exampleStateInput"
+                >Where are you hiking today?</label
+              >
+              <!-- Select state your hiking in -->
+              <div class="pl-4">
+                <select
+                  class="state-select rounded-md p-1 outline-none mt-2 border-white border-2"
+                  type="search"
+                  name="state-select"
+                  id="search-term"
+                >
+                  <option value="Choose">Choose a state:</option>
+                  <option value="Alabama">Alabama</option>
+                  <option value="Alaska">Alaska</option>
+                  <option value="Arizona">Arizona</option>
+                  <option value="Arkansas">Arkansas</option>
+                  <option value="California">California</option>
+                  <option value="Colorado">Colorado</option>
+                  <option value="Connecticut">Connecticut</option>
+                  <option value="Delaware">Delaware</option>
+                  <option value="District Of Columbia">District Of Columbia</option>
+                  <option value="Florida">Florida</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Hawaii">Hawaii</option>
+                  <option value="Idaho">Idaho</option>
+                  <option value="Illinois">Illinois</option>
+                  <option value="Indiana">Indiana</option>
+                  <option value="Iowa">Iowa</option>
+                  <option value="Kansas">Kansas</option>
+                  <option value="Kentucky">Kentucky</option>
+                  <option value="Louisiana">Louisiana</option>
+                  <option value="Maine">Maine</option>
+                  <option value="Maryland">Maryland</option>
+                  <option value="Massachusetts">Massachusetts</option>
+                  <option value="Michigan">Michigan</option>
+                  <option value="Minnesota">Minnesota</option>
+                  <option value="Mississippi">Mississippi</option>
+                  <option value="Missouri">Missouri</option>
+                  <option value="Montana">Montana</option>
+                  <option value="Nebraska">Nebraska</option>
+                  <option value="Nevada">Nevada</option>
+                  <option value="New Hampshire">New Hampshire</option>
+                  <option value="New Jersey">New Jersey</option>
+                  <option value="New Mexico">New Mexico</option>
+                  <option value="New York">New York</option>
+                  <option value="North Carolina">North Carolina</option>
+                  <option value="North Dakota">North Dakota</option>
+                  <option value="Ohio">Ohio</option>
+                  <option value="Oklahoma">Oklahoma</option>
+                  <option value="Oregon">Oregon</option>
+                  <option value="Pennsylvania">Pennsylvania</option>
+                  <option value="Rhode Island">Rhode Island</option>
+                  <option value="South Carolina">South Carolina</option>
+                  <option value="South Dakota">South Dakota</option>
+                  <option value="Tennessee">Tennessee</option>
+                  <option value="Texas">Texas</option>
+                  <option value="Utah">Utah</option>
+                  <option value="Vermont">Vermont</option>
+                  <option value="Virginia">Virginia</option>
+                  <option value="Washington">Washington</option>
+                  <option value="West Virginia">West Virginia</option>
+                  <option value="Wisconsin">Wisconsin</option>
+                  <option value="Wyoming">Wyoming</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  
+    <!-- State Display Card -->
+  <div class="w-screen h-screen">
+    <div class="main-page w-full h-full">
+      <div id="container" class="container" style="display: none">
+        <div class="card overflow-auto">
+          <div class="map-div">
+            <img
+              class="map"
+              id="map"
+              src="./assets/images/tennessee.png"
+              alt="physical map"
+            />
+          </div>
+          <div class="info">
+            <h1 class="title">
+              <div class="date font-bold" id="currentDay"></div>
+            </h1>
+  
+            <div class="weather">
+              <h3 class="description pt-2">CURRENT CONDITIONS</h3>
+              <div class="list flex justify-around items-center">
+                <div>
+                  <div class="date font-bold" id="currentDay"></div>
+                </div>
+                <div>
+                  <div class="temperature"></div>
+                </div>
+                <div>
+                  <div class="uvIndex"></div>
+                </div>
+                <div>
+                  <div class="weather-icon"></div>
+                </div>
+              </div>
+            </div>
+            <div class="more-info flex justify-center">
+              <button class="bg-blue-400">See More Trails at HikingProject.com</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+    <footer class="flex bg-bottom bg-auto bg-black bg-opacity-75 text-center border-white border-t-8">
+      <div class="text-white text-shadow-md pt-4 pb-4 w-full">
+        <div>
+          <h2 class="font-bold text-orange-200 text-shadow text-3xl">
+            <i class="fas fa-hiking"></i>
+            HIKE NOW
+          </h2>
+          <h2 class="text-xs leading-none pb-1">Hike Now © 2020 | created by: Jamie, Lydia & Shelby
+          <h2 class="text-xs">state images courtesy of geology.com</h2>
+        </div>
+        <div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/postcss.config.js"></script>
+  </body>
+</html>
