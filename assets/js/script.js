@@ -116,10 +116,19 @@ function uvIndex(lng, lat) {
     url: `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lng}`,
     method: "GET",
   }).then(function (response1) {
-    $(".uvIndex").html(
-      " UV Index: " +
-        `<span class=" badge badge-danger">${response1.value}</span>`
-    );
+    var uvFormat = response1.value.toFixed(2);
+    if (uvFormat < 3) {
+        document.getElementById("uvIndex").innerHTML =
+          "UV Index: " +
+          `<span class=" badge badge-success">${uvFormat}</span>`;
+      } else if (uvFormat > 2.99 && uvFormat < 6) {
+        document.getElementById("uvIndex").innerHTML =
+          "UV Index: " +
+          `<span class=" badge badge-warning">${uvFormat}</span>`;
+      } else if (uvFormat > 5.99) {
+        document.getElementById("uvIndex").innerHTML =
+          "UV Index: " + `<span class=" badge badge-danger">${uvFormat}</span>`;
+      }
   });
 }
 
@@ -139,22 +148,60 @@ function successFunction(position) {
   uvIndex(lng, lat);
 }
 
-function updateLocation(response) {
-    $(".date").html(`<h2>${currentTime}:</h2>`);
-    $(".weather-icon").html(`<h2><img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`);
-    $(".temperature").text("Temp: " + Math.round(response.main.temp) + "°F");
-    $(".title").html(response.name);
-    // maps.src = images[response.name];
-    if (response.name === "State of Maine") {
-        $(".title").text("Maine");
-        // $(".trail-desc").text("BEST TRAILS IN MAINE")
-    } else if (response.name === "State of Wyoming") {
-        $(".title").text("Wyoming");
-        // $(".trail-desc").text("BEST TRAILS IN WYOMING") ;
-    } else {
-        // $(".trail-desc").text("BEST TRAILS IN " + response.name);
-    };
+// Trails
+function getTrails(lng,lat) {
+    $.ajax({
+        url: `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&key=${apiKey2}`,
+        method: "GET"
+    })
+        .then(function (response){
+            console.log(response.trails[0]);
+            $("#trail1").html(`<h2>${response.trails[0].name}</h2>`);
+            $("#trail2").html(`<h2>${response.trails[1].name}</h2>`);
+            $("#trail3").html(`<h2>${response.trails[2].name}</h2>`);
+            $("#trail4").html(`<h2>${response.trails[3].name}</h2>`);
+            $("#trail5").html(`<h2>${response.trails[4].name}</h2>`);
+            $("#location1").text(response.trails[0].location);
+            $("#location2").text(response.trails[1].location);
+            $("#location3").text(response.trails[2].location);
+            $("#location4").text(response.trails[3].location);
+            $("#location5").text(response.trails[4].location);
+            $("#difficulty1").text("Difficulty: " + response.trails[0].difficulty);
+            $("#difficulty2").text("Difficulty: " + response.trails[1].difficulty);
+            $("#difficulty3").text("Difficulty: " + response.trails[2].difficulty);
+            $("#difficulty4").text("Difficulty: " + response.trails[3].difficulty);
+            $("#difficulty5").text("Difficulty: " + response.trails[4].difficulty);
+            $("#length1").text("Length: " + response.trails[0].length + " miles");
+            $("#length2").text("Length: " + response.trails[1].length + " miles");
+            $("#length3").text("Length: " + response.trails[2].length + " miles");
+            $("#length4").text("Length: " + response.trails[3].length + " miles");
+            $("#length5").text("Length: " + response.trails[4].length + " miles");
+            $("#url1").text("More information").attr("href", response.trails[0].url);
+            $("#url2").text("More information").attr("href", response.trails[1].url);
+            $("#url3").text("More information").attr("href", response.trails[2].url);
+            $("#url4").text("More information").attr("href", response.trails[3].url);
+            $("#url5").text("More information").attr("href", response.trails[4].url); 
+        });
 };
+
+function updateLocation(response) {
+  $(".date").html(`<h2>${currentTime}:</h2>`);
+  $(".weather-icon").html(
+    `<h2><img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`
+  );
+  $(".temperature").text("Temp: " + Math.round(response.main.temp) + "°F");
+  $(".title").html(response.name);
+  // maps.src = images[response.name];
+  if (response.name === "State of Maine") {
+    $(".title").text("Maine");
+    // $(".trail-desc").text("BEST TRAILS IN MAINE")
+  } else if (response.name === "State of Wyoming") {
+    $(".title").text("Wyoming");
+    // $(".trail-desc").text("BEST TRAILS IN WYOMING") ;
+  } else {
+    // $(".trail-desc").text("BEST TRAILS IN " + response.name);
+  }
+}
 
 function errorFunction() {
   alert("Geocoder failed");
