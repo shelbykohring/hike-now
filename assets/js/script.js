@@ -14,6 +14,7 @@ const description = document.querySelector(".description");
 const list = document.querySelector(".list");
 const moreinfo = document.querySelector(".more-info");
 const weather = document.querySelector(".weather");
+const trails = document.querySelector(".trails");
 
 //Animation event
 container.addEventListener("mousemove", (e) => {
@@ -28,8 +29,9 @@ container.addEventListener("mouseenter", (e) => {
   title.style.transform = "translateZ(80px)";
   map.style.transform = "translateZ(50px)";
   description.style.transform = "translateZ(50px)";
-  weather.style.transform = "translateZ(60px)";
-  moreinfo.style.transform = "translateZ(80px)";
+  weather.style.transform = "translateZ(50px)";
+  trails.style.transform = "translateZ(60px)";
+  //moreinfo.style.transform = "translateZ(80px)";
 });
 //Animate out
 container.addEventListener("mouseleave", (e) => {
@@ -40,7 +42,8 @@ container.addEventListener("mouseleave", (e) => {
   map.style.transform = "translateZ(0px)";
   description.style.transform = "translateZ(0px)";
   weather.style.transform = "translateZ(0px)";
-  moreinfo.style.transform = "translateZ(0px)";
+  trails.style.transform = "translateZ(0px)";
+  //moreinfo.style.transform = "translateZ(0px)";
 });
 
 // -----------------------------------------------------------------------------------------
@@ -192,12 +195,12 @@ function updateLocation(response) {
   // maps.src = images[response.name];
   if (response.name === "State of Maine") {
     $(".title").text("Maine");
-    // $(".trail-desc").text("BEST TRAILS IN MAINE")
+    $(".trail-desc").text("BEST HIKING TRAILS IN MAINE");
   } else if (response.name === "State of Wyoming") {
     $(".title").text("Wyoming");
-    // $(".trail-desc").text("BEST TRAILS IN WYOMING") ;
+    $(".trail-desc").text("BEST HIKING TRAILS IN WYOMING");
   } else {
-    // $(".trail-desc").text("BEST TRAILS IN " + response.name);
+    $(".trail-desc").text("BEST HIKING TRAILS IN " + response.name);
   }
 }
 
@@ -205,7 +208,7 @@ function errorFunction() {
   alert("Geocoder failed");
 }
 
-function citySearch() {
+function stateSearch() {
   $(".state-select").change(function (event) {
     //this event prevents default refreshing of the page upon button click
     event.preventDefault("change");
@@ -217,11 +220,12 @@ function citySearch() {
       }).then(function (response) {
         updateLocation(response);
         uvIndex(response.coord.lon, response.coord.lat);
+        getTrails(response.coord.lon, response.coord.lat);
       });
     }
   });
 }
-citySearch();
+stateSearch();
 
 const cityInfo = async (city) => {
   const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
@@ -234,5 +238,6 @@ const buttonClick = (city) => {
   cityInfo(city).then((response) => {
     updateLocation(response);
     uvIndex(response.coord.lon, response.coord.lat);
+    getTrails(response.coord.lon, response.coord.lat);
   });
 };
