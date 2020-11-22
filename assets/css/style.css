@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1200px;
+    perspective: 2000px;
 }
 
 /* landing page */
@@ -152,8 +152,15 @@ button {
     padding: 1.5rem;
     transition: all 0.75s ease-out;
     border-radius: 30px;
+}
+.trails {
+    background-color: rgb(61, 185, 169);
+    padding: 1.3rem;
+    margin: 2rem 0;
+    transition: all 0.75s ease-out;
+    border-radius: 30px;
 } 
-.more-info button:hover {
+/* .more-info button:hover {
     background-color: #3a72da;
 }
 .more-info {
@@ -173,4 +180,34 @@ button {
 }
 .more-info button:hover {
     background-color: #3a72da;
+} */
+.trail-desc {
+    text-transform: uppercase;
+}
+.trail-item {
+    border: solid;
+    border-width: 0 1px 1px 1px;
+}
+.trail-item h2 {
+    padding: 5px 0 0 6px;;
+}
+.trail-item li {
+    padding-left: 6px;
+}
+.trail-item a {
+    padding-left: 5px;
+}
+#trail-item1 {
+    border-top: 1px solid;
+    border-radius: 5px 5px 0px 0px;
+}
+#trail-item5 {
+    border-radius: 0px 0px 5px 5px;
+}
+.info-list li {
+    list-style: none;
+    
+}
+ul {
+    columns: 2;
 }

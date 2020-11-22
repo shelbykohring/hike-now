@@ -1,5 +1,5 @@
 // Search button click handling
-$(".state-select").change(function() {
+$(".button2").click(function() {
     $(".container").show();
     $(".back-button").show();
 });
@@ -12,7 +12,7 @@ $(".back-button").click(function() {
 });
 $(".back-button").click(function() {
     $(".container").hide();
-}); 
+});
 
 //Movement animation piece
 const card = document.querySelector('.card');
@@ -23,6 +23,7 @@ const description = document.querySelector(".description");
 const list = document.querySelector(".list");
 const moreinfo = document.querySelector(".more-info");
 const weather = document.querySelector(".weather");
+const trails = document.querySelector(".trails");
 
 //Animation event
 container.addEventListener('mousemove', (e) => {
@@ -37,8 +38,9 @@ container.addEventListener("mouseenter", (e) => {
     title.style.transform = "translateZ(80px)";
     map.style.transform = "translateZ(50px)";
     description.style.transform = "translateZ(50px)";
-    weather.style.transform = "translateZ(60px)";
-    moreinfo.style.transform = "translateZ(80px)";
+    weather.style.transform = "translateZ(50px)";
+    trails.style.transform = "translateZ(60px)";
+    //moreinfo.style.transform = "translateZ(80px)";
 });
 //Animate out
 container.addEventListener("mouseleave", (e) => {
@@ -49,13 +51,15 @@ container.addEventListener("mouseleave", (e) => {
     map.style.transform = "translateZ(0px)";
     description.style.transform = "translateZ(0px)";
     weather.style.transform = "translateZ(0px)";
-    moreinfo.style.transform = "translateZ(0px)";
+    trails.style.transform = "translateZ(0px)";
+    //moreinfo.style.transform = "translateZ(0px)";
 });
 
 // -----------------------------------------------------------------------------------------
 var currentTime = (moment().format('MM/DD/YYYY'));
 var apiKey = "78abac7397dbff0934df4ef82fc5fd58";
-var query = document.getElementById("state-select");
+var apiKey2 = "200974984-c9f2b134614b531af1bbb9832b1b52b5";
+var query = document.getElementById("search-term");
 var maps = document.getElementById("map");
 console.log(currentTime);
 
@@ -117,9 +121,9 @@ var images = {
 query.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("state-select").change();
+        document.getElementById("searchbtn").click();
     }
-}); 
+});
 
 // UV index
 function uvIndex(lng, lat) {
@@ -146,6 +150,42 @@ function successFunction(position) {
     uvIndex(lng, lat);
 };
 
+// Trails
+function getTrails(lng,lat) {
+    $.ajax({
+        url: `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&key=${apiKey2}`,
+        method: "GET"
+    })
+        .then(function (response){
+            console.log(response.trails[0]);
+            $("#trail1").html(`<h2>${response.trails[0].name}</h2>`);
+            $("#trail2").html(`<h2>${response.trails[1].name}</h2>`);
+            $("#trail3").html(`<h2>${response.trails[2].name}</h2>`);
+            $("#trail4").html(`<h2>${response.trails[3].name}</h2>`);
+            $("#trail5").html(`<h2>${response.trails[4].name}</h2>`);
+            $("#location1").text(response.trails[0].location);
+            $("#location2").text(response.trails[1].location);
+            $("#location3").text(response.trails[2].location);
+            $("#location4").text(response.trails[3].location);
+            $("#location5").text(response.trails[4].location);
+            $("#difficulty1").text("Difficulty: " + response.trails[0].difficulty);
+            $("#difficulty2").text("Difficulty: " + response.trails[1].difficulty);
+            $("#difficulty3").text("Difficulty: " + response.trails[2].difficulty);
+            $("#difficulty4").text("Difficulty: " + response.trails[3].difficulty);
+            $("#difficulty5").text("Difficulty: " + response.trails[4].difficulty);
+            $("#length1").text("Length: " + response.trails[0].length + " miles");
+            $("#length2").text("Length: " + response.trails[1].length + " miles");
+            $("#length3").text("Length: " + response.trails[2].length + " miles");
+            $("#length4").text("Length: " + response.trails[3].length + " miles");
+            $("#length5").text("Length: " + response.trails[4].length + " miles");
+            $("#url1").text("More information").attr("href", response.trails[0].url);
+            $("#url2").text("More information").attr("href", response.trails[1].url);
+            $("#url3").text("More information").attr("href", response.trails[2].url);
+            $("#url4").text("More information").attr("href", response.trails[3].url);
+            $("#url5").text("More information").attr("href", response.trails[4].url); 
+        });
+};
+
 // Update location
 function updateLocation(response) {
     $(".city").html(`<h2>${response.name} (${currentTime}) <img src="https://openweathermap.org/img/w/${response.weather[0].icon}.png"></h2>`);
@@ -153,15 +193,24 @@ function updateLocation(response) {
     $(".temperature").text("Temperature: " + Math.round(response.main.temp) + "°F");
     $(".title").html(response.name);
     maps.src = images[response.name];
-    console.log(response.name);
+
+    if (response.name === "State of Maine") {
+        $(".title").text("Maine");
+        $(".trail-desc").text("BEST HIKING TRAILS IN MAINE")
+    } else if (response.name === "State of Wyoming") {
+        $(".title").text("Wyoming");
+        $(".trail-desc").text("BEST HIKING TRAILS IN WYOMING") ;
+    } else {
+        $(".trail-desc").text("BEST HIKING TRAILS IN " + response.name);
+    };
 };
 
 // State search function
 function stateSearch() {
-    $("state-select").change(function (event) {
+    $(".button2").click(function (event) {
         //this event prevents default refreshing of the page upon button click
-        event.preventDefault("change")
-        let city = $("#state-select").val().trim();
+        event.preventDefault("click")
+        let city = $("#search-term").val().trim();
         if (city != '') {
             $.ajax({
                 url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`,
@@ -169,6 +218,7 @@ function stateSearch() {
             }).then(function (response) {
                 updateLocation(response);
                 uvIndex(response.coord.lon, response.coord.lat)
+                getTrails(response.coord.lon, response.coord.lat)
             });
         }
     })
@@ -186,5 +236,6 @@ const buttonClick = (city) => {
     cityInfo(city).then(response => {
         updateLocation(response);
         uvIndex(response.coord.lon, response.coord.lat);
+        getTrails(response.coord.lon, response.coord.lat);
     });
 };
