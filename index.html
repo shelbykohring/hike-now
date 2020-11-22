@@ -12,7 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Hike Now</title>
   </head>
@@ -37,16 +40,13 @@
           </div>
           <div class="flex form">
             <form class="ml-12">
-              <label
-                class="text-shadow text-white pl-4 pr-4"
-                for="exampleStateInput"
+              <label class="text-shadow text-white pl-4 pr-4"
                 >Where are you hiking today?</label
               >
               <!-- Select state your hiking in -->
               <div class="pl-4">
                 <select
                   class="state-select rounded-md p-1 outline-none mt-2 border-white border-2"
-                  type="search"
                   name="state-select"
                   id="search-term"
                 >
@@ -59,7 +59,9 @@
                   <option value="Colorado">Colorado</option>
                   <option value="Connecticut">Connecticut</option>
                   <option value="Delaware">Delaware</option>
-                  <option value="District Of Columbia">District Of Columbia</option>
+                  <option value="District Of Columbia">
+                    District Of Columbia
+                  </option>
                   <option value="Florida">Florida</option>
                   <option value="Georgia">Georgia</option>
                   <option value="Hawaii">Hawaii</option>
@@ -110,63 +112,116 @@
       </div>
     </header>
 
-  
     <!-- State Display Card -->
-  <div class="w-screen h-screen">
-    <div class="main-page w-full h-full">
-      <div id="container" class="container" style="display: none">
-        <div class="card overflow-auto">
-          <div class="map-div">
-            <img
-              class="map"
-              id="map"
-              src="./assets/images/tennessee.png"
-              alt="physical map"
-            />
-          </div>
-          <div class="info">
-            <h1 class="title">
-              <div class="date font-bold" id="currentDay"></div>
-            </h1>
-  
-            <div class="weather">
-              <h3 class="description pt-2">CURRENT CONDITIONS</h3>
-              <div class="list flex justify-around items-center">
-                <div>
-                  <div class="date font-bold" id="currentDay"></div>
-                </div>
-                <div>
-                  <div class="temperature"></div>
-                </div>
-                <div>
-                  <div class="uvIndex"></div>
-                </div>
-                <div>
-                  <div class="weather-icon"></div>
+    <div class="w-screen h-screen">
+      <div class="main-page w-full h-full">
+        <div id="container" class="container" style="display: none">
+          <div class="card overflow-auto">
+            <div class="map-div">
+              <img
+                class="map"
+                id="map"
+                src="./assets/images/"
+                alt="physical map"
+              />
+            </div>
+            <div class="info">
+              <h1 class="title"></h1>
+              <div class="weather">
+                <h3 class="description pt-2">CURRENT CONDITIONS</h3>
+                <div class="list flex justify-around items-center">
+                  <div>
+                    <div class="date font-bold" id="currentDay"></div>
+                  </div>
+                  <div>
+                    <div class="temperature"></div>
+                  </div>
+                  <div>
+                    <div id="uvIndex" class="uvIndex"></div>
+                  </div>
+                  <div>
+                    <div class="weather-icon"></div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="more-info flex justify-center">
-              <button class="bg-blue-400">See More Trails at HikingProject.com</button>
+
+              <!-- Trails -->
+              <div class="trails mt-4">
+                <h3 class="description"><span class="trail-desc"></span></h3>
+                <div class="trail-list">
+                  <div class="trail-item" id="trail-item1">
+                    <div id="trail1"></div>
+                    <ul class="info-list">
+                      <li class="location" id="location1"></li>
+                      <li class="difficulty" id="difficulty1"></li>
+                      <li class="length" id="length1"></li>
+                    </ul>
+                    <a class="url" id="url1"></a>
+                  </div>
+                  <div class="trail-item">
+                    <div class="trail-name" id="trail2"></div>
+                    <ul class="info-list">
+                      <li class="location" id="location2"></li>
+                      <li class="difficulty" id="difficulty2"></li>
+                      <li class="length" id="length2"></li>
+                    </ul>
+                    <a class="url" id="url2"></a>
+                  </div>
+                  <div class="trail-item">
+                    <div class="trail-name" id="trail3"></div>
+                    <ul class="info-list">
+                      <li class="location" id="location3"></li>
+                      <li class="difficulty" id="difficulty3"></li>
+                      <li class="length" id="length3"></li>
+                    </ul>
+                    <a class="url" id="url3"></a>
+                  </div>
+                  <div class="trail-item">
+                    <div class="trail-name" id="trail4"></div>
+                    <ul class="info-list">
+                      <li class="location" id="location4"></li>
+                      <li class="difficulty" id="difficulty4"></li>
+                      <li class="length" id="length4"></li>
+                    </ul>
+                    <a class="url" id="url4"></a>
+                  </div>
+                  <div class="trail-item" id="trail-item5">
+                    <div class="trail-name" id="trail5"></div>
+                    <ul class="info-list">
+                      <li class="location" id="location5"></li>
+                      <li class="difficulty" id="difficulty5"></li>
+                      <li class="length" id="length5"></li>
+                    </ul>
+                    <a class="url" id="url5"></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="more-info flex justify-center">
+                <button class="bg-blue-400">
+                  See More Trails at HikingProject.com
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-    
 
-    <footer class="flex bg-bottom bg-auto bg-black bg-opacity-75 text-center border-white border-t-8">
+    <footer
+      class="flex bg-bottom bg-auto bg-black bg-opacity-75 text-center border-white border-t-8"
+    >
       <div class="text-white text-shadow-md pt-4 pb-4 w-full">
         <div>
           <h2 class="font-bold text-orange-200 text-shadow text-3xl">
             <i class="fas fa-hiking"></i>
             HIKE NOW
           </h2>
-          <h2 class="text-xs leading-none pb-1">Hike Now © 2020 | created by: Jamie, Lydia & Shelby
+          <h2 class="text-xs leading-none pb-1">
+            Hike Now © 2020 | created by: Jamie, Lydia & Shelby
+          </h2>
           <h2 class="text-xs">state images courtesy of geology.com</h2>
         </div>
-        <div>
       </div>
     </footer>
 
