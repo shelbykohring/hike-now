@@ -123,7 +123,7 @@ body {
   text-align: center;
 }
 
-.more-info button:hover {
+.more-info form:hover {
   background-color: #3a72da;
 }
 
@@ -132,7 +132,7 @@ body {
   transition: all 0.75s ease-out;
 }
 
-.more-info button {
+.more-info form {
   padding: 7px 25px 7px 25px;
   border: none;
   outline: none;
@@ -140,10 +140,6 @@ body {
   cursor: pointer;
   border-radius: 15px;
   transition: 0.4s;
-}
-
-.more-info button:hover {
-  background-color: #3a72da;
 }
 
 .trail-desc {
@@ -154,7 +150,7 @@ body {
   border-width: 0 1px 1px 1px;
 }
 .trail-item h2 {
-  padding: 5px 0 0 6px;;
+  padding: 5px 0 0 6px;
 }
 .trail-item li {
   padding-left: 6px;
