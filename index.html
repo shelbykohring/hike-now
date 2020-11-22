@@ -59,9 +59,6 @@
                   <option value="Colorado">Colorado</option>
                   <option value="Connecticut">Connecticut</option>
                   <option value="Delaware">Delaware</option>
-                  <option value="District Of Columbia">
-                    District Of Columbia
-                  </option>
                   <option value="Florida">Florida</option>
                   <option value="Georgia">Georgia</option>
                   <option value="Hawaii">Hawaii</option>
@@ -121,7 +118,7 @@
               <img
                 class="map"
                 id="map"
-                src="./assets/images/"
+                src="./assets/images/state-images/"
                 alt="physical map"
               />
             </div>
@@ -198,9 +195,16 @@
               </div>
 
               <div class="more-info flex justify-center">
-                <button class="bg-blue-400">
-                  See More Trails at HikingProject.com
-                </button>
+                <form
+                  class="bg-blue-400"
+                >
+                  <input
+                    class="bg-transparent d-inline outline-none"
+                    type="submit"
+                    value="See More Trails at HikingProject.com"
+                    onclick="window.open('https://hikingproject.com')"
+                  />
+                </form>
               </div>
             </div>
           </div>
