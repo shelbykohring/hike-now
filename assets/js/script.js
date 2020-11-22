@@ -46,6 +46,7 @@ container.addEventListener("mouseleave", (e) => {
 // -----------------------------------------------------------------------------------------
 var currentTime = moment().format("MM/DD/YY");
 var apiKey = "78abac7397dbff0934df4ef82fc5fd58";
+var apiKey2 = "200979311-2dd7f68633b1fa021dc645ecbdad4e64";
 var query = document.getElementById("search-term");
 var maps = document.getElementById("map");
 

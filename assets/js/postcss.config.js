@@ -1,5 +1,5 @@
 export const plugins = [
-  // ...
-  require('tailwindcss'),
-  require('autoprefixer'),
-];
+    // ...
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ];
