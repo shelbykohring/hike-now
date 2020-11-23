@@ -177,11 +177,11 @@ function getTrails(lng, lat) {
     $("#length3").text("Length: " + response.trails[2].length + " miles");
     $("#length4").text("Length: " + response.trails[3].length + " miles");
     $("#length5").text("Length: " + response.trails[4].length + " miles");
-    $("#url1").text("More information").attr("href", response.trails[0].url);
-    $("#url2").text("More information").attr("href", response.trails[1].url);
-    $("#url3").text("More information").attr("href", response.trails[2].url);
-    $("#url4").text("More information").attr("href", response.trails[3].url);
-    $("#url5").text("More information").attr("href", response.trails[4].url);
+    $("#url1").text("MORE INFORMATION").attr("href", response.trails[0].url);
+    $("#url2").text("MORE INFORMATION").attr("href", response.trails[1].url);
+    $("#url3").text("MORE INFORMATION").attr("href", response.trails[2].url);
+    $("#url4").text("MORE INFORMATION").attr("href", response.trails[3].url);
+    $("#url5").text("MORE INFORMATION").attr("href", response.trails[4].url);
   });
 }
 
