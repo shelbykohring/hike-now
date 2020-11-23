@@ -1,6 +1,6 @@
-@tailwind base";
-@tailwind components";
-@tailwind utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 .hero-img {
-  background-image: url("/assets/images/landing-page-images/hero.jpg");
+  background-image: url("https://dev-to-uploads.s3.amazonaws.com/i/ith2bptv8fgxkvgizn4x.jpg");
   height: 300px;
   margin: 0;
   background-position: right;
