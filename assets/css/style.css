@@ -570,7 +570,7 @@ iframe,
 embed,
 object {
   display: block;
-  @apply align-middle;
+  vertical-align: middle;
 }
 
 /**
@@ -21649,7 +21649,7 @@ body {
 }
 
 .hero-img {
-  background-image: url("/assets/images/group-project-1-hero.jpg");
+  background-image: url("/assets/images/landing-page-images/hero.jpg");
   height: 300px;
   margin: 0;
   background-position: right;
@@ -21684,7 +21684,7 @@ body {
 .main-page {
   width: 100%;
   height: 100%;
-  background-image: url("/assets/images/landing-page-main.jpg");
+  background-image: url("/assets/images/landing-page-images/main-background.jpg");
   background-size: stretch;
 }
 
