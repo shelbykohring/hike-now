@@ -26,6 +26,7 @@ With Hike Now, you can see the best trails in the state you are in, and get the 
 * Jamie de Lange
 * Lydia Kennedy
 * Shelby Kohring
+* November 2020
 
 <!-- Identified APIs -->
 ### Identified APIs
